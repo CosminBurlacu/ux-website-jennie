@@ -4,6 +4,11 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
     box-sizing: border-box;
 }
 
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
 .header {
     padding: 12px 25px;
     display: flex;
@@ -12,12 +17,24 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
     justify-content: space-between;
 }
 
+.header--logo a {
+    font-family: 'Allura', cursive;
+}
+
+.header--menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
 .header a {
     text-decoration: none;
     font-size: 17px;
     text-transform: uppercase;
     font-family: sans-serif;
-    font-weight: 700;
+    font-weight: 300;
     color: black;
     transition: all 0.45s ease-in-out;
 }
@@ -31,29 +48,44 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
     position: relative;
 }
 
-.landing--container:before {
-    content: "";
-    left: -50px;
-    top: -50px;
-    height: 250px;
-    width: 250px;
-    position: absolute;
-    border: 3px solid black;
-}
-
-.landing--container:after {
-    content: "";
-    right: 0;
-    bottom: -50px;
-    height: 250px;
-    width: 250px;
-    position: absolute;
-    border: 3px solid black;
-}
-
 .landing--container {
     width: 768px;
     position: relative;
+}
+
+.landing--container img {
+    width: 1100px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+    .landing--container img {
+        width: 65%;
+        filter: invert(70%);
+    }
+
+    .landing-inspiration img {
+        filter: invert(50%);
+    }
+
+    .main-inspiration--primary,
+    .main-inspiration--secondary {
+        flex-direction: column !important;
+    }
+
+    .primary-right img:last-child {
+        position: relative !important;
+        left: 0 !important;
+        bottom: 0 !important;
+    }
+
+    .secondary-left img:last-child {
+     display: none;
+    }
 }
 
 @media screen and (max-width: 1440px) {
@@ -72,21 +104,22 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
 
 .landing--container h1 {
     font-size: 6vw;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
 }
 
 .landing--container h2 {
     font-size: 25px;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
+    margin-top: 50px;
 }
 
 /* About section */
 
 .about {
     height: auto;
-    min-height: 100vh;
+    min-height: 75vh;
     background-color: black;
     color: white;
     padding: 150px 0;
@@ -228,6 +261,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
     text-align: center;
     margin: 0 auto;
     min-height: 50vh;
+    margin-bottom: 50px;
 }
 
 @media screen and (max-width: 900px) {
@@ -280,6 +314,15 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
     position: relative;
     margin: 0 auto;
     margin-bottom:120px;
+    overflow: hidden;
+}
+
+.landing--gallery img {
+    position: absolute;
+    bottom: -65%;;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: invert(50%);
 }
 
 @media screen and (max-width: 900px) {
@@ -367,3 +410,152 @@ html, body, h1, h2, h3, h4, h5, h6, p, a {
     }
 }
 
+.inspiration-body {
+    background-color: #000000;
+}
+
+.landing-inspiration img {
+    filter: invert(100%);
+    animation: animationInspiration 3.5s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes animationInspiration {
+    from {
+        filter: invert(100%);
+    }
+    to {
+        filter: invert(0%);
+    }
+}
+
+.landing-inspiration h1,
+.landing-inspiration h2 {
+    color: #ffffff;
+}
+
+.landing-inspiration h1 {
+    animation: animateInspirationTitle 1.5s ease-in-out forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes animateInspirationTitle {
+    from {
+        font-size: 6vw;
+    }
+    to {
+        font-size: 4.1vw;
+    }
+}
+
+.header-inspiration {
+    a {
+        color: #ffffff;
+        font-weight: 400;
+    }
+}
+
+.main-inspiration {
+    background-color: #ffffff;
+    width: 92%;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+.main-inspiration--primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 15px;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.main-inspiration--primary a {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    color: #000000;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+.main-inspiration--primary a img {
+    width: 50px;
+    height: auto;
+}
+
+.main-inspiration--primary a:hover {
+    text-decoration: underline;
+}
+
+.primary-left img {
+    width: 250px;
+    height: auto;
+}
+
+.primary-left h2 {
+    font-size: 42px;
+    margin-top: 25px;
+}
+
+.primary-left p {
+    margin-top: 7px;
+    max-width: 350px;
+}
+
+.primary-right {
+    position: relative;
+    width: 45%;
+}
+
+.primary-right img:last-child {
+    position: absolute;
+    bottom: -150px;
+    left: 250px;
+}
+
+.main-inspiration--secondary {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 50px 15px;
+    position: relative;
+    margin-top: 250px;
+}
+
+.secondary-left {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.secondary-left img:last-child {
+    margin-top: -120px;
+}
+
+.secondary-right {
+    text-align: right;
+}
+
+
+.secondary-right img {
+    margin-bottom: 15px;
+}
+
+.secondary-right p {
+    max-width: 350px;
+}
+
+.masonry-item p {
+    margin-top: 7px;
+    font-weight: 300;
+}
