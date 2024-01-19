@@ -54,7 +54,7 @@ p {
 }
 
 .landing--container img {
-    width: 1100px;
+    width: 900px;
     height: auto;
     position: absolute;
     top: 50%;
@@ -459,7 +459,6 @@ p {
     background-color: #ffffff;
     width: 92%;
     margin: 0 auto;
-    padding-bottom: 150px;
 }
 
 .main-inspiration--primary {
@@ -488,12 +487,14 @@ p {
     letter-spacing: 0.5px;
 }
 
-.main-inspiration--primary a img {
+.main-inspiration--primary a img,
+.main-inspiration--secondary a img {
     width: 50px;
     height: auto;
 }
 
-.main-inspiration--primary a:hover {
+.main-inspiration--primary a:hover,
+.main-inspiration--secondary a:hover {
     text-decoration: underline;
 }
 
@@ -540,6 +541,8 @@ p {
 
 .secondary-left img:last-child {
     margin-top: -120px;
+    margin-left: 15px;
+    max-width: 260px;
 }
 
 .secondary-right {
@@ -558,4 +561,20 @@ p {
 .masonry-item p {
     margin-top: 7px;
     font-weight: 300;
+}
+
+.main-inspiration--secondary a {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+    color: #000000;
+    font-size: 19px;
+    letter-spacing: 0.5px;
 }
